@@ -15,7 +15,16 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
+from django.http import HttpResponse
+
+# membuat fungsi tentang dan index
+def tentang(request):
+    return HttpResponse('Halaman Tentang')
+def index(request):
+    return HttpResponse('Hello World')
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('tentang/', tentang),
+    path('index', index),
 ]
